@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="6" failures="0" name="com.sg.superherodao.SightingDaoTest" time="1.112" errors="0" skipped="0">
+<testsuite tests="6" failures="0" name="com.sg.superherodao.SightingDaoTest" time="1.211" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-oracle/jre/lib/amd64"/>
@@ -61,10 +61,10 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.sg.superherodao.SightingDaoTest" name="GetAllSightings" time="0.168"/>
-  <testcase classname="com.sg.superherodao.SightingDaoTest" name="addGetSighting" time="0.175"/>
-  <testcase classname="com.sg.superherodao.SightingDaoTest" name="GetSightingByID" time="0.148"/>
-  <testcase classname="com.sg.superherodao.SightingDaoTest" name="UpdateSighting" time="0.201"/>
-  <testcase classname="com.sg.superherodao.SightingDaoTest" name="DeleteSighting" time="0.195"/>
-  <testcase classname="com.sg.superherodao.SightingDaoTest" name="GetAllSightingsByDate" time="0.225"/>
+  <testcase classname="com.sg.superherodao.SightingDaoTest" name="GetAllSightings" time="0.17"/>
+  <testcase classname="com.sg.superherodao.SightingDaoTest" name="addGetSighting" time="0.212"/>
+  <testcase classname="com.sg.superherodao.SightingDaoTest" name="GetSightingByID" time="0.16"/>
+  <testcase classname="com.sg.superherodao.SightingDaoTest" name="UpdateSighting" time="0.242"/>
+  <testcase classname="com.sg.superherodao.SightingDaoTest" name="DeleteSighting" time="0.177"/>
+  <testcase classname="com.sg.superherodao.SightingDaoTest" name="GetAllSightingsByDate" time="0.25"/>
 </testsuite>

@@ -104,20 +104,24 @@ public class SightingController {
 
     @RequestMapping(value = "/displayEditSightingForm", method = RequestMethod.GET)
     public String displayEditSightingForm(HttpServletRequest request, Model model) {
+        List<Sighting> sightingList = dao.getAllSightings();
+        model.addAttribute("sightingList", sightingList);
+        model.addAttribute("locationList", Ldao.getAllLocations());
+        model.addAttribute("superList", Sdao.getAllSupers());
         String sightingIDParameter = request.getParameter("sightingID");
         int sightingID = Integer.parseInt(sightingIDParameter);
         Sighting sighting = dao.getSightingByID(sightingID);
-//        sighting.setLocation(Ldao.getLocationByID(sighting.getLocationID()));
-        //sighting.setSuperID(Sdao.getSuperByID(sighting.getSuperID()));
         model.addAttribute(sighting);
         return "SightingEdit";
     }
 
     @RequestMapping(value = "/editSighting", method = RequestMethod.POST)
     public String editSighting(@Valid @ModelAttribute("sighting") Sighting sighting, BindingResult result) {
-        if (result.hasErrors()) {
-            return "SightingEdit";
-        }
+    
+
+//        if (result.hasErrors()) {
+//            return "SightingEdit";
+//        }
         dao.updateSighting(sighting);
         return "redirect:displaySightingPage";
     }

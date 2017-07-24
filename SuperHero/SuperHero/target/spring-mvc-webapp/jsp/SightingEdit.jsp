@@ -30,21 +30,25 @@
 
                     <div class="form-group">
                         <label for="location-selector" class="col-md-4 control-label">Location</label>
-                        <div class="col-md-8">
-                        <sf:input type="text" class="form-control" id="location-selector" path="location.locationName" placeholder="Enter Location"/>
-                        <sf:errors path="location.locationName" cssclass="error"></sf:errors>
-                        </div>
-                    </div>   
-
-                    <div class="form-group">
-                        <label for="super-selector" class="col-md-4 control-label">Superhero</label>
-                        <div class="col-md-8">
-                        <c:forEach var="listSupers" items="${supers.superName}">
-                            <sf:input type="text" class="form-control" id="super-selector" path="listSupers.superName" placeholder="Enter Superhero"/>
-                            <sf:errors path="listSupers.superName" cssclass="error"></sf:errors>
-                        </c:forEach>
+                        <div class="col-md-4">
+                            <select id="location-selector" name="locationID">
+                            <c:forEach var="loc" items="${locationList}">
+                                <option value="${loc.locationID}">${loc.locationName}</option>
+                            </c:forEach>
+                        </select>
                     </div>
-                </div>                          
+                </div>
+
+                <div class="form-group">
+                    <label for="super-selector" class="col-md-4 control-label">Superhero</label>
+                    <div class="col-md-8">
+                        <select id="super-selector" name="superID">
+                            <c:forEach var="sup" items="${superList}">
+                                <option value="${sup.superID}">${sup.superName}</option>
+                            </c:forEach> 
+                        </select>
+                    </div>
+                </div>                   
 
                 <div class="form-group">
                     <div class="col-md-offset-4 col-md-8">
