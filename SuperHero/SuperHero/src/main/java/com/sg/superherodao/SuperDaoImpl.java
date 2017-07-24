@@ -87,11 +87,6 @@ public class SuperDaoImpl implements SuperDao {
         return superList;
     }
 
-    /*
-    private Super insertOrganizationSuper(Super superhero) {
-
-    }
-     */
     private List<Super> findSuperLocations(Location location) {
         return jdbcTemplate.query(PreparedStatements.SQL_SELECT_SUPERS_BY_LOCATION, new SuperMapper(), location.getLocationID());
     }

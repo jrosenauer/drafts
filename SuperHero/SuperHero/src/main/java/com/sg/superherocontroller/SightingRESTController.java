@@ -70,10 +70,10 @@ public class SightingRESTController {
         return dao.getAllSightings();
     }
     
-    @RequestMapping(value = "/tenSightings", method = RequestMethod.GET)
-        @ResponseBody
-    public List<Sighting> getTopTenSightings() {
-        return dao.getTopTenSightings();
-    }
+//    @RequestMapping(value = "/tenSightings", method = RequestMethod.GET)
+//        @ResponseBody
+//    public List<Sighting> getTopTenSightings() {
+//        return dao.getTopTenSightings();
+//    }
 
 }

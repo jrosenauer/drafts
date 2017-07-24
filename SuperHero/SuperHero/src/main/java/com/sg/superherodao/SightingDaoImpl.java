@@ -99,9 +99,9 @@ public class SightingDaoImpl implements SightingDao {
         return sightingList;
     }
 
-    @Override
-    public List<Sighting> getTopTenSightings() {
-        List<Sighting> sightingList = jdbcTemplate.query(PreparedStatements.SQL_SELECT_TEN_SIGHTINGS, new SightingMapper());
-        return sightingList;
-    }
+//    @Override
+//    public List<Sighting> getTopTenSightings() {
+//        List<Sighting> sightingList = jdbcTemplate.query(PreparedStatements.SQL_SELECT_TEN_SIGHTINGS, new SightingMapper());
+//        return sightingList;
+//    }
 }

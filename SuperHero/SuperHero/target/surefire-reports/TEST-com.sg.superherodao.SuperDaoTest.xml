@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="7" failures="0" name="com.sg.superherodao.SuperDaoTest" time="2.438" errors="0" skipped="0">
+<testsuite tests="7" failures="0" name="com.sg.superherodao.SuperDaoTest" time="1.991" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-oracle/jre/lib/amd64"/>
@@ -61,11 +61,11 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.sg.superherodao.SuperDaoTest" name="GetAllSupersByOrganization" time="0.488"/>
-  <testcase classname="com.sg.superherodao.SuperDaoTest" name="GetAllSupers" time="0.239"/>
-  <testcase classname="com.sg.superherodao.SuperDaoTest" name="GetSuperByID" time="0.32"/>
-  <testcase classname="com.sg.superherodao.SuperDaoTest" name="DeleteSuper" time="0.24"/>
-  <testcase classname="com.sg.superherodao.SuperDaoTest" name="addGetSuper" time="0.404"/>
+  <testcase classname="com.sg.superherodao.SuperDaoTest" name="GetAllSupersByOrganization" time="0.294"/>
+  <testcase classname="com.sg.superherodao.SuperDaoTest" name="GetAllSupers" time="0.258"/>
+  <testcase classname="com.sg.superherodao.SuperDaoTest" name="GetSuperByID" time="0.297"/>
+  <testcase classname="com.sg.superherodao.SuperDaoTest" name="DeleteSuper" time="0.313"/>
+  <testcase classname="com.sg.superherodao.SuperDaoTest" name="addGetSuper" time="0.185"/>
   <testcase classname="com.sg.superherodao.SuperDaoTest" name="UpdateSuper" time="0.444"/>
-  <testcase classname="com.sg.superherodao.SuperDaoTest" name="GetAllSupersByLocation" time="0.303"/>
+  <testcase classname="com.sg.superherodao.SuperDaoTest" name="GetAllSupersByLocation" time="0.2"/>
 </testsuite>

@@ -4,6 +4,7 @@
     Author     : apprentice
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -18,7 +19,7 @@
             <jsp:include page="NavigationBar.jsp"/>
             <br/>              
             <sf:form class="form-horizontal" role="form" modelAttribute="sighting" action="editSighting" method="POST">
-                
+
                 <div class="form-group">
                     <label for="add-sighting-date" class="col-md-4 control-label">Date </label>
                     <div class="col-md-8">
@@ -34,14 +35,16 @@
                         <sf:errors path="location.locationName" cssclass="error"></sf:errors>
                         </div>
                     </div>   
-                        
+
                     <div class="form-group">
-                        <label for="add-sighting-supers" class="col-md-4 control-label">Superhero</label>
+                        <label for="super-selector" class="col-md-4 control-label">Superhero</label>
                         <div class="col-md-8">
-                        <sf:input type="text" class="form-control" id="add-sighting-supers" path="superID" placeholder="Enter Superhero"/>
-                        <sf:errors path="superID" cssclass="error"></sf:errors>
-                        </div>
-                    </div>                          
+                        <c:forEach var="listSupers" items="${supers.superName}">
+                            <sf:input type="text" class="form-control" id="super-selector" path="listSupers.superName" placeholder="Enter Superhero"/>
+                            <sf:errors path="listSupers.superName" cssclass="error"></sf:errors>
+                        </c:forEach>
+                    </div>
+                </div>                          
 
                 <div class="form-group">
                     <div class="col-md-offset-4 col-md-8">

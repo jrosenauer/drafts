@@ -76,9 +76,9 @@ public class SightingController {
 
         List<Super> supers3 = new ArrayList<>();
         supers3.add(super2);
-        
+
         sighting.setSupers(supers3);
-        
+
         dao.addSighting(sighting);
         return "redirect:displaySightingPage";
 
@@ -107,7 +107,8 @@ public class SightingController {
         String sightingIDParameter = request.getParameter("sightingID");
         int sightingID = Integer.parseInt(sightingIDParameter);
         Sighting sighting = dao.getSightingByID(sightingID);
-        sighting.setLocation(Ldao.getLocationByID(sighting.getLocationID()));
+//        sighting.setLocation(Ldao.getLocationByID(sighting.getLocationID()));
+        //sighting.setSuperID(Sdao.getSuperByID(sighting.getSuperID()));
         model.addAttribute(sighting);
         return "SightingEdit";
     }
