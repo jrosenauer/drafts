@@ -8,6 +8,12 @@
         <title>Index Page</title>
         <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
         <link href="${pageContext.request.contextPath}/css/home.css" rel="stylesheet"> 
+        <style>
+            
+            td
+            {padding:10px}
+            
+        </style>
     </head>
     <body>
         <div class="container">
@@ -25,7 +31,21 @@
                             <th width="40%">Location</th>
                             <th width="40%">Superheroes</th>
                         </tr>
-                        <tbody id="ten-sightings-rows"></tbody>
+                        <c:forEach var="currentSighting" items="${sightingList}">
+                            <tr>
+                                <td>
+                                    <c:out value="${currentSighting.sightingDate}"/> 
+                                </td>
+                                <td>
+                                    <c:out value="${currentSighting.location.locationName}"/>
+                                </td>
+                                <td>
+                                    <c:forEach var="super1" items="${currentSighting.supers}">
+                                        <c:out value="${super1.superName}"/>
+                                    </c:forEach>
+                                </td>
+                            </tr>
+                        </c:forEach>
                     </table>
                 </div>                
             </div>

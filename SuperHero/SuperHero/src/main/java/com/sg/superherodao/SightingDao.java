@@ -28,5 +28,5 @@ public interface SightingDao {
 
     public List< Sighting> getAllSightingsByDate(LocalDate date);
 
-    //public List<Sighting> getTopTenSightings();
+    public List<Sighting> getTopTenSightings();
 }

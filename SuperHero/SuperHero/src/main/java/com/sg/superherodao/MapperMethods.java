@@ -11,6 +11,8 @@ import com.sg.superheromodel.Sighting;
 import com.sg.superheromodel.Super;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import org.springframework.jdbc.core.RowMapper;
 
 /**
@@ -99,4 +101,19 @@ public class MapperMethods {
             return sups;
         }
     }
+    
+    public static final class TenSightingMapper implements RowMapper< Sighting> {
+
+        @Override
+        public Sighting mapRow(ResultSet rs, int i) throws SQLException {
+            Sighting sight = new Sighting();
+            sight.setSightingDate(rs.getDate("SightingDate").toLocalDate());
+            sight.setLocation(new Location(rs.getString("LocationName")));
+            List<Super> superLists = new ArrayList<>();
+            superLists.add(new Super(rs.getString("SuperName")));
+            sight.setSupers(superLists);
+            return sight;
+        }
+    }
+    
 }

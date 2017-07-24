@@ -117,12 +117,14 @@ public class SightingController {
 
     @RequestMapping(value = "/editSighting", method = RequestMethod.POST)
     public String editSighting(@Valid @ModelAttribute("sighting") Sighting sighting, BindingResult result) {
-    
-
-//        if (result.hasErrors()) {
-//            return "SightingEdit";
-//        }
         dao.updateSighting(sighting);
         return "redirect:displaySightingPage";
+    }
+
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String displayTenSightings(Model model) {
+        List<Sighting> sightingList = dao.getAllSightings();
+        model.addAttribute("sightingList", sightingList);
+        return "index";
     }
 }

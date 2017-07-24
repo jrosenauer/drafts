@@ -5,9 +5,6 @@
  */
 package com.sg.superheromodel;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  *
  * @author apprentice
@@ -18,10 +15,14 @@ public class Super {
     private String superName;
     private String superDescription;
    private String superPower;
-//    private List< Integer> organizationID;
-//    //private List< Organization> organizations = new ArrayList<>();
-//    private List< Location> locations = new ArrayList<>();
-//    private List< Sighting> sightings = new ArrayList<>();
+
+   public Super() {
+       
+   }
+   
+   public Super(String superName) {
+       this.superName = superName;
+   }
 
     /**
      * @return the superID

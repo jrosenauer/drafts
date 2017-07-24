@@ -9,6 +9,7 @@ import com.sg.superherodao.MapperMethods.LocationMapper;
 import com.sg.superherodao.MapperMethods.SightingMapper;
 import com.sg.superherodao.MapperMethods.SightingSuperLocationMapper;
 import com.sg.superherodao.MapperMethods.SuperMapper;
+import com.sg.superherodao.MapperMethods.TenSightingMapper;
 import com.sg.superheromodel.Location;
 import com.sg.superheromodel.Sighting;
 import com.sg.superheromodel.Super;
@@ -55,10 +56,17 @@ public class SightingDaoImpl implements SightingDao {
 
     @Override
     public void updateSighting(Sighting sighting) {
+        try {
         jdbcTemplate.update(PreparedStatements.SQL_UPDATE_SIGHTING,
                 java.sql.Date.valueOf(sighting.getSightingDate()),
                 sighting.getLocationID(),
                 sighting.getSightingID());
+        
+        jdbcTemplate.update(PreparedStatements.SQL_UPDATE_SUPER_SIGHTING, sighting.getSuperID().get(0), sighting.getSightingID());
+        } catch
+        (Exception E) {
+            E.printStackTrace();
+        }
     }
 
     @Override
@@ -99,9 +107,9 @@ public class SightingDaoImpl implements SightingDao {
         return sightingList;
     }
 
-//    @Override
-//    public List<Sighting> getTopTenSightings() {
-//        List<Sighting> sightingList = jdbcTemplate.query(PreparedStatements.SQL_SELECT_TEN_SIGHTINGS, new SightingMapper());
-//        return sightingList;
-//    }
+    @Override
+    public List<Sighting> getTopTenSightings() {
+        List<Sighting> sightingList = jdbcTemplate.query(PreparedStatements.SQL_SELECT_TEN_SIGHTINGS, new TenSightingMapper());
+        return sightingList;
+    }
 }

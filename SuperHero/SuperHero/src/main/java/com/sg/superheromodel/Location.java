@@ -29,6 +29,13 @@ public class Location {
     public int getLocationID() {
         return locationID;
     }
+    
+    public Location() {
+}
+    
+    public Location(String locationName) {
+        this.locationName = locationName;
+    }
 
     /**
      * @param locationID the locationID to set

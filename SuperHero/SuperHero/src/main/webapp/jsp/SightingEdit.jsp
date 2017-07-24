@@ -23,6 +23,7 @@
                 <div class="form-group">
                     <label for="add-sighting-date" class="col-md-4 control-label">Date </label>
                     <div class="col-md-8">
+                        <sf:input type="hidden" class="form-control" id="sightingID" path="sightingID"/>
                         <sf:input type="text" class="form-control" id="add-sighting-date" path="sightingDate" placeholder="Enter Date"/>
                         <sf:errors path="sightingDate" cssclass="error"></sf:errors>
                         </div>

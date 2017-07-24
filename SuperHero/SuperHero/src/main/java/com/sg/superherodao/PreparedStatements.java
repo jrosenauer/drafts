@@ -179,6 +179,15 @@ public class PreparedStatements {
             + "where ss.SightingID = ?";
     
     public static final String SQL_SELECT_TEN_SIGHTINGS
-            = "select * from Sighting sight "
+            = "select Sighting.SightingDate, Location.LocationName, SuperHero.SuperName from Sighting "
+            + "inner join SuperSighting on Sighting.SightingID = SuperSighting.SightingID "
+            + "inner join Location on Sighting.LocationID = Location.LocationID "
+            + "inner join SuperHero on SuperSighting.SuperID = SuperHero.SuperID "
+            + "order by SightingDate desc "
             + "limit 10";
+    
+    public static final String SQL_UPDATE_SUPER_SIGHTING
+            = "update SuperSighting set SuperID = ? "
+            + "where SightingID = ?";
+
 }
